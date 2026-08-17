@@ -11,13 +11,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:      #FFFFFF;
-      --bg-soft: #F8F7F5;
-      --text:    #0E0E0E;
-      --muted:   rgba(14,14,14,0.45);
-      --border:  rgba(14,14,14,0.09);
-      --serif:   'Cormorant Garamond', Georgia, serif;
-      --sans:    'DM Sans', -apple-system, sans-serif;
+      --bg:       #F4EFE6;
+      --surface:  #EDE6D9;
+      --card:     #EAE2D4;
+      --text:     #1A1410;
+      --muted:    rgba(26,20,16,0.42);
+      --border:   rgba(26,20,16,0.08);
+      --serif:    'Cormorant Garamond', Georgia, serif;
+      --sans:     'DM Sans', -apple-system, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -31,7 +32,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ─── NAV ─── */
+    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -40,8 +41,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 22px 52px;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(16px);
+      background: rgba(244,239,230,0.88);
+      backdrop-filter: blur(18px);
       border-bottom: 1px solid transparent;
       transition: border-color 0.3s, padding 0.3s;
     }
@@ -55,6 +56,7 @@
       font-weight: 400;
       color: var(--text);
       text-decoration: none;
+      letter-spacing: -0.01em;
     }
 
     .nav-links {
@@ -67,7 +69,7 @@
     .nav-links a {
       font-size: 11px;
       font-weight: 400;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
       color: var(--muted);
       text-decoration: none;
@@ -76,153 +78,156 @@
 
     .nav-links a:hover { color: var(--text); }
 
-    /* ─── HERO ─── */
+    /* HERO */
     .hero {
-      padding: 140px 52px 100px;
-      border-bottom: 1px solid var(--border);
       max-width: 1100px;
       margin: 0 auto;
+      padding: 136px 52px 96px;
+      border-bottom: 1px solid var(--border);
     }
 
-    .hero-tag {
+    .hero-eyebrow {
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .hero-tag::before {
+    .hero-eyebrow::before {
       content: '';
-      display: inline-block;
-      width: 24px; height: 1px;
+      width: 22px; height: 1px;
       background: var(--muted);
+      display: inline-block;
     }
 
     .hero-name {
       font-family: var(--serif);
-      font-size: clamp(64px, 10vw, 108px);
+      font-size: clamp(62px, 9.5vw, 106px);
       font-weight: 300;
       font-style: italic;
       line-height: 0.92;
       letter-spacing: -0.02em;
       color: var(--text);
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     .hero-bio {
-      font-size: clamp(15px, 1.6vw, 18px);
+      font-size: clamp(15px, 1.5vw, 17px);
       font-weight: 300;
       color: var(--muted);
-      line-height: 1.75;
-      max-width: 560px;
-      margin-bottom: 44px;
+      line-height: 1.8;
+      max-width: 520px;
+      margin-bottom: 40px;
     }
 
     .hero-bio strong { color: var(--text); font-weight: 500; }
 
-    .hero-links {
+    .hero-pills {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
-    .link-pill {
+    .pill {
       font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
       text-decoration: none;
       padding: 10px 22px;
       border: 1px solid var(--border);
       border-radius: 2px;
       color: var(--muted);
+      background: transparent;
       transition: all 0.2s;
     }
 
-    .link-pill:hover { border-color: var(--text); color: var(--text); }
+    .pill:hover { border-color: var(--text); color: var(--text); }
 
-    .link-pill-fill {
+    .pill-dark {
       background: var(--text);
-      color: #fff !important;
+      color: var(--bg) !important;
       border-color: var(--text);
     }
 
-    .link-pill-fill:hover { background: #333; border-color: #333; }
+    .pill-dark:hover { background: #3a2e26; border-color: #3a2e26; }
 
-    /* ─── STATS ─── */
+    /* STATS */
     .stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
 
-    .stat-item {
-      padding: 48px 52px;
+    .stat {
+      padding: 44px 52px;
       border-right: 1px solid var(--border);
     }
 
-    .stat-item:last-child { border-right: none; }
+    .stat:last-child { border-right: none; }
 
-    .stat-num {
+    .stat-n {
       font-family: var(--serif);
-      font-size: clamp(42px, 5vw, 68px);
+      font-size: clamp(40px, 5vw, 64px);
       font-weight: 300;
       font-style: italic;
       line-height: 1;
       color: var(--text);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
-    .stat-label {
+    .stat-l {
       font-size: 12px;
       font-weight: 300;
       color: var(--muted);
       line-height: 1.5;
     }
 
-    /* ─── SHARED SECTION ─── */
-    .section { padding: 96px 52px; border-bottom: 1px solid var(--border); }
-    .section-alt { background: var(--bg-soft); }
+    /* SECTIONS */
+    .section {
+      padding: 88px 52px;
+      border-bottom: 1px solid var(--border);
+    }
+
     .section-inner { max-width: 1100px; margin: 0 auto; }
 
-    .section-eyebrow {
+    .eyebrow {
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 48px;
+      margin-bottom: 44px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .section-eyebrow::before {
+    .eyebrow::before {
       content: '';
-      display: inline-block;
-      width: 24px; height: 1px;
+      width: 22px; height: 1px;
       background: var(--muted);
+      display: inline-block;
     }
 
     h2 {
       font-family: var(--serif);
-      font-size: clamp(34px, 4.5vw, 54px);
+      font-size: clamp(32px, 4.2vw, 52px);
       font-weight: 300;
       font-style: italic;
       line-height: 1.12;
       letter-spacing: -0.01em;
       color: var(--text);
-      margin-bottom: 48px;
+      margin-bottom: 44px;
     }
 
-    /* ─── JOURNEY ─── */
-    .journey-grid {
+    /* JOURNEY GRID */
+    .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1px;
@@ -230,70 +235,71 @@
       border: 1px solid var(--border);
     }
 
-    .journey-item {
-      background: var(--bg-soft);
-      padding: 38px;
+    .grid-item {
+      background: var(--surface);
+      padding: 36px;
     }
 
-    .journey-period {
-      font-size: 11px;
+    .gi-period {
+      font-size: 10px;
       font-weight: 500;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .journey-title {
+    .gi-title {
       font-family: var(--serif);
-      font-size: 24px;
+      font-size: 22px;
       font-style: italic;
       font-weight: 400;
       color: var(--text);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
-    .journey-sub {
-      font-size: 11px;
+    .gi-sub {
+      font-size: 10px;
       font-weight: 500;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 12px;
     }
 
-    .journey-desc {
+    .gi-desc {
       font-size: 13px;
       font-weight: 300;
       color: var(--muted);
       line-height: 1.75;
     }
 
-    /* ─── PROJECTS ─── */
-    .projects-grid {
+    /* PROJECT CARDS */
+    .project-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 16px;
     }
 
     .project-card {
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 2px;
-      padding: 38px;
+      padding: 36px;
       text-decoration: none;
       color: inherit;
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      gap: 12px;
+      transition: background 0.2s, box-shadow 0.2s;
     }
 
     .project-card:hover {
-      border-color: rgba(14,14,14,0.28);
-      box-shadow: 0 8px 28px rgba(14,14,14,0.06);
+      background: var(--card);
+      box-shadow: 0 6px 24px rgba(26,20,16,0.07);
     }
 
-    .project-tag {
+    .pc-tag {
       font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.14em;
@@ -301,16 +307,16 @@
       color: var(--muted);
     }
 
-    .project-name {
+    .pc-name {
       font-family: var(--serif);
-      font-size: 30px;
+      font-size: 28px;
       font-style: italic;
       font-weight: 400;
       color: var(--text);
       line-height: 1.1;
     }
 
-    .project-desc {
+    .pc-desc {
       font-size: 13px;
       font-weight: 300;
       color: var(--muted);
@@ -318,7 +324,7 @@
       flex: 1;
     }
 
-    .project-arrow {
+    .pc-link {
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.08em;
@@ -326,37 +332,39 @@
       color: var(--text);
     }
 
-    /* ─── CAFES ─── */
-    .cafes-intro {
-      max-width: 620px;
+    /* CAFE SECTION */
+    .cafe-lead {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 88px;
+      align-items: start;
       margin-bottom: 64px;
     }
 
-    .cafes-intro h2 { margin-bottom: 20px; }
+    .cafe-lead h2 { margin-bottom: 20px; }
 
-    .cafes-body {
-      font-size: 15px;
+    .cafe-body {
+      font-size: 14px;
       font-weight: 300;
       color: var(--muted);
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
-    .cafes-body + .cafes-body { margin-top: 14px; }
+    .cafe-body p + p { margin-top: 14px; }
 
-    /* masonry-style photo grid */
+    /* photo grid */
     .photo-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
-      gap: 12px;
-      margin-bottom: 72px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 300px 300px;
+      gap: 10px;
+      margin-bottom: 64px;
     }
 
     .photo-item {
-      position: relative;
       overflow: hidden;
       border-radius: 2px;
-      background: var(--bg-soft);
+      background: var(--surface);
     }
 
     .photo-item img {
@@ -365,78 +373,59 @@
       object-fit: cover;
       object-position: center;
       display: block;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s ease;
     }
 
-    .photo-item:hover img { transform: scale(1.03); }
+    .photo-item:hover img { transform: scale(1.04); }
 
-    .photo-item-tall { grid-row: span 2; }
-
-    .photo-item:nth-child(1) { aspect-ratio: 4/3; }
-    .photo-item:nth-child(2) { aspect-ratio: 4/3; }
-    .photo-item:nth-child(3) { aspect-ratio: 4/5; grid-row: span 2; }
-    .photo-item:nth-child(4) { aspect-ratio: 4/3; }
-    .photo-item:nth-child(5) { aspect-ratio: 4/3; }
-    .photo-item:nth-child(6) { aspect-ratio: 4/3; }
-    .photo-item:nth-child(7) { aspect-ratio: 4/3; }
-
-    .photo-caption {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      padding: 28px 16px 14px;
-      background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.06em;
-      color: rgba(255,255,255,0.75);
-      text-transform: uppercase;
-    }
+    .photo-item:nth-child(1) { grid-column: 1; grid-row: 1; }
+    .photo-item:nth-child(2) { grid-column: 2; grid-row: 1 / span 2; }
+    .photo-item:nth-child(3) { grid-column: 1; grid-row: 2; }
+    .photo-item:nth-child(4) { display: none; }
 
     /* cafe list */
-    .cafes-list-grid {
+    .cafe-cities {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
-      margin-bottom: 64px;
+      margin-bottom: 52px;
     }
 
-    .cafe-city-block {
-      background: var(--bg);
-      padding: 32px 36px;
+    .city-block {
+      background: var(--surface);
+      padding: 30px 34px;
     }
 
-    .section-alt .cafe-city-block { background: var(--bg-soft); }
-
-    .cafe-city {
-      font-size: 11px;
+    .city-name {
+      font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 16px;
-      padding-bottom: 12px;
+      padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
     }
 
-    .cafe-names {
+    .cafe-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 10px;
     }
 
-    .cafe-names li {
+    .cafe-list li {
       font-family: var(--serif);
-      font-size: 17px;
+      font-size: 16px;
       font-style: italic;
       font-weight: 400;
       color: var(--text);
       line-height: 1.2;
     }
 
-    .cafe-names li span {
+    .cafe-list li span {
       font-family: var(--sans);
       font-size: 11px;
       font-style: normal;
@@ -446,57 +435,52 @@
       margin-top: 1px;
     }
 
-    /* community CTA */
-    .community-cta {
+    /* connect banner */
+    .connect-banner {
       background: var(--text);
       border-radius: 2px;
-      padding: 48px 52px;
+      padding: 44px 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 40px;
+      gap: 36px;
     }
 
-    .community-cta-text h3 {
+    .cb-text h3 {
       font-family: var(--serif);
-      font-size: clamp(26px, 3vw, 38px);
+      font-size: clamp(24px, 2.8vw, 34px);
       font-style: italic;
       font-weight: 300;
-      color: #fff;
-      margin-bottom: 8px;
+      color: var(--bg);
+      margin-bottom: 6px;
       line-height: 1.2;
     }
 
-    .community-cta-text p {
+    .cb-text p {
       font-size: 13px;
       font-weight: 300;
-      color: rgba(255,255,255,0.45);
+      color: rgba(244,239,230,0.42);
     }
 
-    .btn-cta-white {
+    .cb-btn {
       font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       text-decoration: none;
-      padding: 13px 32px;
-      border: 1px solid rgba(255,255,255,0.35);
-      color: rgba(255,255,255,0.85);
+      padding: 12px 28px;
+      border: 1px solid rgba(244,239,230,0.3);
+      color: rgba(244,239,230,0.8);
       border-radius: 2px;
       white-space: nowrap;
       flex-shrink: 0;
       transition: all 0.2s;
     }
 
-    .btn-cta-white:hover {
-      border-color: #fff;
-      color: #fff;
-    }
+    .cb-btn:hover { border-color: var(--bg); color: var(--bg); }
 
-    /* ─── CONTACT ─── */
-    .contact-inner {
-      max-width: 1100px;
-      margin: 0 auto;
+    /* CONTACT */
+    .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 88px;
@@ -508,12 +492,12 @@
       font-weight: 300;
       color: var(--muted);
       line-height: 1.8;
-      margin-bottom: 36px;
+      margin-bottom: 32px;
     }
 
-    .contact-links { display: flex; flex-direction: column; gap: 14px; }
+    .contact-links { display: flex; flex-direction: column; gap: 12px; }
 
-    .contact-link {
+    .clink {
       display: flex;
       align-items: center;
       gap: 14px;
@@ -524,23 +508,23 @@
       transition: color 0.2s;
     }
 
-    .contact-link:hover { color: var(--text); }
+    .clink:hover { color: var(--text); }
 
-    .contact-link-label {
+    .clink-label {
       font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
-      width: 68px;
+      width: 64px;
       flex-shrink: 0;
     }
 
-    .f-group { margin-bottom: 16px; }
+    .f-group { margin-bottom: 14px; }
 
     .f-group label {
       display: block;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -551,10 +535,10 @@
     .f-group input,
     .f-group textarea {
       width: 100%;
-      background: var(--bg-soft);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 2px;
-      padding: 11px 14px;
+      padding: 11px 13px;
       font-family: var(--sans);
       font-size: 14px;
       font-weight: 300;
@@ -565,29 +549,29 @@
     }
 
     .f-group input:focus,
-    .f-group textarea:focus { border-color: var(--text); }
+    .f-group textarea:focus { border-color: rgba(26,20,16,0.35); }
 
-    .f-group textarea { min-height: 100px; resize: vertical; line-height: 1.6; }
+    .f-group textarea { min-height: 96px; resize: vertical; line-height: 1.6; }
 
     .btn-send {
       font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 12px 32px;
+      padding: 12px 30px;
       background: var(--text);
-      color: #fff;
+      color: var(--bg);
       border: none;
       border-radius: 2px;
       cursor: pointer;
       transition: background 0.2s;
     }
 
-    .btn-send:hover { background: #333; }
+    .btn-send:hover { background: #3a2e26; }
 
-    /* ─── FOOTER ─── */
+    /* FOOTER */
     footer {
-      padding: 32px 52px;
+      padding: 28px 52px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -596,195 +580,178 @@
 
     .footer-name {
       font-family: var(--serif);
-      font-size: 16px;
+      font-size: 15px;
       font-style: italic;
       color: var(--text);
     }
 
     .footer-note { font-size: 11px; color: var(--muted); }
 
-    /* ─── MOBILE ─── */
+    /* MOBILE */
     @media (max-width: 768px) {
-      nav { padding: 16px 20px; }
-      nav.scrolled { padding: 12px 20px; }
+      nav { padding: 15px 20px; }
+      nav.scrolled { padding: 11px 20px; }
       .nav-links { display: none; }
 
-      .hero { padding: 100px 20px 64px; }
+      .hero { padding: 96px 20px 64px; }
 
       .stats { grid-template-columns: 1fr; }
-      .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 20px; }
-      .stat-item:last-child { border-bottom: none; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border); padding: 30px 20px; }
+      .stat:last-child { border-bottom: none; }
 
-      .section { padding: 64px 20px; }
+      .section { padding: 60px 20px; }
 
-      .journey-grid,
-      .projects-grid,
-      .cafes-list-grid { grid-template-columns: 1fr; }
+      .grid-2,
+      .project-grid,
+      .cafe-cities { grid-template-columns: 1fr; }
+
+      .cafe-lead { grid-template-columns: 1fr; gap: 32px; }
 
       .photo-grid {
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 200px;
       }
-      .photo-item:nth-child(3) { grid-row: span 1; aspect-ratio: 4/3; }
 
-      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+      .photo-item:nth-child(2) { grid-row: 1; }
+      .photo-item:nth-child(3) { grid-row: 2; }
 
-      .community-cta { flex-direction: column; align-items: flex-start; padding: 32px 24px; }
+      .connect-banner { flex-direction: column; align-items: flex-start; padding: 28px 24px; }
 
-      footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+
+      footer { padding: 22px 20px; flex-direction: column; align-items: flex-start; gap: 4px; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="main-nav">
   <a href="#" class="nav-name">Shiv Singh</a>
   <ul class="nav-links">
     <li><a href="#journey">Journey</a></li>
-    <li><a href="#cafes">Café Life</a></li>
+    <li><a href="#cafes">Cafes</a></li>
     <li><a href="#contact">Say Hello</a></li>
-    <li><a href="https://www.linkedin.com/in/singhhshiv/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+    <li><a href="https://www.linkedin.com/in/singhhshiv/" target="_blank" rel="noopener">LinkedIn</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<div style="border-bottom: 1px solid var(--border);">
+<div style="border-bottom:1px solid var(--border);">
   <div class="hero">
-    <div class="hero-tag">Co-founder · IIT Delhi</div>
+    <div class="hero-eyebrow">Co-founder · IIT Delhi</div>
     <div class="hero-name">Shiv<br>Singh</div>
     <p class="hero-bio">
       I build things, grow them, and make them reach people.
-      Currently co-founding <strong>GrapeRoot</strong> with a batchmate — leading distribution, growth, GTM, partnerships, and product.
-      Before that: <strong>500 videos</strong>, <strong>35M views</strong>, early-stage startups, and a lot of chai.
+      Co-founding <strong>GrapeRoot</strong> with a batchmate, leading distribution, growth, GTM, partnerships, and product.
+      Before that: <strong>500 videos</strong>, <strong>35M views</strong>, early-stage startups, and a lot of chai along the way.
     </p>
-    <div class="hero-links">
-      <a href="#contact" class="link-pill link-pill-fill">Say Hello</a>
-      <a href="https://www.linkedin.com/in/singhhshiv/" target="_blank" rel="noopener" class="link-pill">LinkedIn ↗</a>
-      <a href="https://www.youtube.com/@Shiv-IITD" target="_blank" rel="noopener" class="link-pill">YouTube ↗</a>
-      <a href="https://sites.google.com/view/shivsinghco" target="_blank" rel="noopener" class="link-pill">Portfolio ↗</a>
+    <div class="hero-pills">
+      <a href="#contact" class="pill pill-dark">Say Hello</a>
+      <a href="https://www.linkedin.com/in/singhhshiv/" target="_blank" rel="noopener" class="pill">LinkedIn</a>
+      <a href="https://www.youtube.com/@Shiv-IITD" target="_blank" rel="noopener" class="pill">YouTube</a>
+      <a href="https://sites.google.com/view/shivsinghco" target="_blank" rel="noopener" class="pill">Portfolio</a>
     </div>
   </div>
 </div>
 
-<!-- STATS -->
 <div class="stats">
-  <div class="stat-item">
-    <div class="stat-num">35M</div>
-    <div class="stat-label">YouTube views<br>across 500+ videos</div>
+  <div class="stat">
+    <div class="stat-n">35M</div>
+    <div class="stat-l">YouTube views<br>across 500+ videos</div>
   </div>
-  <div class="stat-item">
-    <div class="stat-num">35k</div>
-    <div class="stat-label">Subscribers<br>on YouTube</div>
+  <div class="stat">
+    <div class="stat-n">35k</div>
+    <div class="stat-l">Subscribers<br>on YouTube</div>
   </div>
-  <div class="stat-item">
-    <div class="stat-num">IIT D</div>
-    <div class="stat-label">Indian Institute<br>of Technology Delhi</div>
+  <div class="stat">
+    <div class="stat-n">IIT D</div>
+    <div class="stat-l">Indian Institute<br>of Technology Delhi</div>
   </div>
 </div>
 
-<!-- JOURNEY -->
-<section class="section section-alt" id="journey">
+<section class="section" id="journey">
   <div class="section-inner">
-    <div class="section-eyebrow">Journey</div>
+    <div class="eyebrow">Journey</div>
     <h2>How I got here</h2>
-    <div class="journey-grid">
-      <div class="journey-item">
-        <div class="journey-period">Now</div>
-        <div class="journey-title">GrapeRoot</div>
-        <div class="journey-sub">Co-founder</div>
-        <p class="journey-desc">Building GrapeRoot with a batchmate from IIT Delhi. Leading distribution, growth, GTM, partnerships, and product. Day zero to whatever comes next.</p>
+    <div class="grid-2">
+      <div class="grid-item">
+        <div class="gi-period">Now</div>
+        <div class="gi-title">GrapeRoot</div>
+        <div class="gi-sub">Co-founder</div>
+        <p class="gi-desc">Building GrapeRoot with a batchmate from IIT Delhi. Leading distribution, growth, GTM, partnerships, and product. Day zero to whatever comes next.</p>
       </div>
-      <div class="journey-item">
-        <div class="journey-period">During College</div>
-        <div class="journey-title">YouTube Creator</div>
-        <div class="journey-sub">500 Videos · 35k Subs · 35M Views</div>
-        <p class="journey-desc">Built a channel from scratch while at IIT Delhi. 500 videos, 35 million views. Learned distribution and audience-building the hard way — by doing it.</p>
+      <div class="grid-item">
+        <div class="gi-period">During College</div>
+        <div class="gi-title">YouTube Creator</div>
+        <div class="gi-sub">500 Videos · 35k Subs · 35M Views</div>
+        <p class="gi-desc">Built a channel from scratch while at IIT Delhi. 500 videos, 35 million views. Learned distribution and audience-building the hard way, by doing it.</p>
       </div>
-      <div class="journey-item">
-        <div class="journey-period">Early Career</div>
-        <div class="journey-title">Early-Stage Startups</div>
-        <div class="journey-sub">Growth · GTM · Distribution</div>
-        <p class="journey-desc">Worked with early-stage startups on growth and go-to-market. Got comfortable with zero-to-one — figuring out who the customer is, how to reach them, and how to keep them.</p>
+      <div class="grid-item">
+        <div class="gi-period">Early Career</div>
+        <div class="gi-title">Early-Stage Startups</div>
+        <div class="gi-sub">Growth · GTM · Distribution</div>
+        <p class="gi-desc">Worked with early-stage startups on growth and go-to-market. Got comfortable with zero-to-one, figuring out who the customer is, how to reach them, and how to keep them.</p>
       </div>
-      <div class="journey-item">
-        <div class="journey-period">College</div>
-        <div class="journey-title">Internships</div>
-        <div class="journey-sub">Marketing · GTM · Growth · Content</div>
-        <p class="journey-desc">Multiple internships across marketing, GTM, growth, and content. Built the foundation of knowing how products reach people — and how to make that repeatable.</p>
+      <div class="grid-item">
+        <div class="gi-period">College</div>
+        <div class="gi-title">Internships</div>
+        <div class="gi-sub">Marketing · GTM · Growth · Content</div>
+        <p class="gi-desc">Multiple internships across marketing, GTM, growth, and content. Built the foundation of knowing how products reach people and how to make that repeatable.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section class="section" id="projects">
   <div class="section-inner">
-    <div class="section-eyebrow">Work</div>
+    <div class="eyebrow">Work</div>
     <h2>What I'm building</h2>
-    <div class="projects-grid">
+    <div class="project-grid">
       <a class="project-card" href="https://sites.google.com/view/shivsinghco" target="_blank" rel="noopener">
-        <div class="project-tag">Current · Co-founder</div>
-        <div class="project-name">GrapeRoot</div>
-        <p class="project-desc">Building GrapeRoot with a batchmate from IIT Delhi. A design system and product studio. Leading everything on the go-to-market side.</p>
-        <div class="project-arrow">View more ↗</div>
+        <div class="pc-tag">Current · Co-founder</div>
+        <div class="pc-name">GrapeRoot</div>
+        <p class="pc-desc">Building GrapeRoot with a batchmate from IIT Delhi. A design system and product studio. Leading everything on the go-to-market side.</p>
+        <div class="pc-link">View more</div>
       </a>
       <a class="project-card" href="https://www.youtube.com/@Shiv-IITD" target="_blank" rel="noopener">
-        <div class="project-tag">Creator · 35M Views</div>
-        <div class="project-name">YouTube</div>
-        <p class="project-desc">500+ videos. 35 million views. 35,000 subscribers. Built entirely while studying at IIT Delhi. A lesson in consistency, distribution, and making things people actually watch.</p>
-        <div class="project-arrow">Visit channel ↗</div>
+        <div class="pc-tag">Creator · 35M Views</div>
+        <div class="pc-name">YouTube</div>
+        <p class="pc-desc">500+ videos. 35 million views. 35,000 subscribers. Built entirely while at IIT Delhi. A lesson in consistency, distribution, and making things people actually watch.</p>
+        <div class="pc-link">Visit channel</div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- CAFÉ LIFE -->
-<section class="section section-alt" id="cafes">
+<section class="section" id="cafes">
   <div class="section-inner">
-    <div class="section-eyebrow">Café Life</div>
-    <div class="cafes-intro">
-      <h2>Two years of working<br>from the best cafés in India</h2>
-      <p class="cafes-body">For the past two years, a café has been my office. Not because I had to — but because the right café does something to the way you think. The ambient noise, the smell of coffee, the unhurried pace of a table by the window. Some of my best work has happened in places like these.</p>
-      <p class="cafes-body" style="margin-top:14px;">I'd love to connect with people who work from cafés too — baristas, owners, regulars, founders, creators. Especially in NCR, Udaipur, and Jaipur. If you work at or run a café I'd love in this list, say hello.</p>
+
+    <div class="cafe-lead">
+      <div>
+        <div class="eyebrow">Cafe Life</div>
+        <h2>Two years of working from the best cafes in India</h2>
+      </div>
+      <div class="cafe-body">
+        <p>For the past two years, a cafe has been my office. Not because I had to, but because the right cafe does something to the way you think. The ambient noise, the smell of coffee, a table by the window. Some of my best work has happened in places like these.</p>
+        <p>I'd love to connect with people who work from cafes too, baristas, owners, regulars, founders, creators. Especially in NCR, Udaipur, and Jaipur. If you work at or run a place I'd love to know about, say hello.</p>
+      </div>
     </div>
 
-    <!-- PHOTO GRID -->
     <div class="photo-grid">
       <div class="photo-item">
-        <img src="IMG_4535.jpg" alt="Spaced Out, Delhi" />
-        <div class="photo-caption">Spaced Out · Delhi</div>
+        <img src="IMG_4535.jpg" alt="" />
       </div>
       <div class="photo-item">
-        <img src="IMG_0388.jpg" alt="Sardar Ji Baksh, Delhi" />
-        <div class="photo-caption">Sardar Ji Baksh · Delhi</div>
-      </div>
-      <div class="photo-item" style="aspect-ratio:4/5;grid-row:span 2;">
-        <img src="IMG_3906.jpg" alt="Bottega, Udaipur" style="object-position:center;" />
-        <div class="photo-caption">Bottega · Udaipur</div>
+        <img src="IMG_3906.jpg" alt="" style="object-position: center 30%;" />
       </div>
       <div class="photo-item">
-        <img src="IMG_2190.jpg" alt="Perch, Khan Market" />
-        <div class="photo-caption">Perch · Khan Market, Delhi</div>
-      </div>
-      <div class="photo-item">
-        <img src="9f887e24-0a87-4741-9b2a-2f6c59172a7e.JPG" alt="Chaayos, SDA" />
-        <div class="photo-caption">Chaayos · SDA, Delhi</div>
-      </div>
-      <div class="photo-item">
-        <img src="IMG_6354.jpg" alt="The Hosteller, Mussoorie" />
-        <div class="photo-caption">The Hosteller · Mussoorie</div>
-      </div>
-      <div class="photo-item">
-        <img src="IMG_9794.jpg" alt="Artjuna, Goa" />
-        <div class="photo-caption">Artjuna · Goa</div>
+        <img src="IMG_2190.jpg" alt="" />
       </div>
     </div>
 
-    <!-- CAFÉ LIST -->
-    <div class="cafes-list-grid">
-      <div class="cafe-city-block">
-        <div class="cafe-city">Delhi / NCR</div>
-        <ul class="cafe-names">
+    <div class="cafe-cities">
+      <div class="city-block">
+        <div class="city-name">Delhi / NCR</div>
+        <ul class="cafe-list">
           <li>Chaayos <span>SDA, South Delhi</span></li>
           <li>Spaced Out <span>Delhi</span></li>
           <li>Blue Tokai <span>Khan Market</span></li>
@@ -797,10 +764,10 @@
           <li>The BCC <span>Sec 62, Noida</span></li>
         </ul>
       </div>
-      <div class="cafe-city-block">
-        <div class="cafe-city">Rajasthan</div>
-        <ul class="cafe-names">
-          <li>Taprì Niwas <span>Udaipur</span></li>
+      <div class="city-block">
+        <div class="city-name">Rajasthan</div>
+        <ul class="cafe-list">
+          <li>Tapri Niwas <span>Udaipur</span></li>
           <li>Crazy Coffee <span>Udaipur</span></li>
           <li>Bottega <span>Udaipur</span></li>
           <li>Jajam <span>Udaipur</span></li>
@@ -808,9 +775,9 @@
           <li>Half Light <span>Jaipur</span></li>
         </ul>
       </div>
-      <div class="cafe-city-block">
-        <div class="cafe-city">Rest of India</div>
-        <ul class="cafe-names">
+      <div class="city-block">
+        <div class="city-name">Rest of India</div>
+        <ul class="cafe-list">
           <li>Artjuna <span>Goa</span></li>
           <li>Third Wave Coffee <span>Andheri, Mumbai</span></li>
           <li>Subko <span>Mumbai</span></li>
@@ -820,60 +787,60 @@
       </div>
     </div>
 
-    <!-- CTA -->
-    <div class="community-cta">
-      <div class="community-cta-text">
-        <h3>Work from cafés too?<br>Let's connect.</h3>
-        <p>Especially if you're in NCR, Udaipur or Jaipur — or if you run a café I should know about.</p>
+    <div class="connect-banner">
+      <div class="cb-text">
+        <h3>Work from cafes too?<br>Let's connect.</h3>
+        <p>Especially if you're in NCR, Udaipur or Jaipur, or run a cafe I should know about.</p>
       </div>
-      <a href="#contact" class="btn-cta-white">Say Hello ↓</a>
+      <a href="#contact" class="cb-btn">Say Hello</a>
     </div>
+
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section" id="contact">
-  <div class="contact-inner">
-    <div>
-      <div class="section-eyebrow">Contact</div>
-      <h2>Let's talk</h2>
-      <p class="contact-body">If you're building something interesting, thinking about growth or GTM, work from cafés, or just want to connect — write to me. I read everything.</p>
-      <div class="contact-links">
-        <a href="https://www.linkedin.com/in/singhhshiv/" target="_blank" rel="noopener" class="contact-link">
-          <span class="contact-link-label">LinkedIn</span>
-          <span>singhhshiv ↗</span>
-        </a>
-        <a href="https://www.youtube.com/@Shiv-IITD" target="_blank" rel="noopener" class="contact-link">
-          <span class="contact-link-label">YouTube</span>
-          <span>@Shiv-IITD ↗</span>
-        </a>
-        <a href="https://sites.google.com/view/shivsinghco" target="_blank" rel="noopener" class="contact-link">
-          <span class="contact-link-label">Portfolio</span>
-          <span>shivsinghco ↗</span>
-        </a>
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2>Let's talk</h2>
+        <p class="contact-body">If you're building something interesting, thinking about growth or GTM, work from cafes, or just want to connect, write to me. I read everything.</p>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/singhhshiv/" target="_blank" rel="noopener" class="clink">
+            <span class="clink-label">LinkedIn</span>
+            <span>singhhshiv</span>
+          </a>
+          <a href="https://www.youtube.com/@Shiv-IITD" target="_blank" rel="noopener" class="clink">
+            <span class="clink-label">YouTube</span>
+            <span>@Shiv-IITD</span>
+          </a>
+          <a href="https://sites.google.com/view/shivsinghco" target="_blank" rel="noopener" class="clink">
+            <span class="clink-label">Portfolio</span>
+            <span>shivsinghco</span>
+          </a>
+        </div>
       </div>
-    </div>
-    <div>
-      <form action="https://formspree.io/f/xvkpbgva" method="POST">
-        <div class="f-group">
-          <label>Your Name</label>
-          <input type="text" name="name" placeholder="Rohan Mehta" required />
-        </div>
-        <div class="f-group">
-          <label>Email</label>
-          <input type="email" name="email" placeholder="you@example.com" required />
-        </div>
-        <div class="f-group">
-          <label>Message</label>
-          <textarea name="message" placeholder="What's on your mind?"></textarea>
-        </div>
-        <button type="submit" class="btn-send">Send Message</button>
-      </form>
+      <div>
+        <form action="https://formspree.io/f/xvkpbgva" method="POST">
+          <div class="f-group">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="Rohan Mehta" required />
+          </div>
+          <div class="f-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="f-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="What's on your mind?"></textarea>
+          </div>
+          <button type="submit" class="btn-send">Send Message</button>
+        </form>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <span class="footer-name">Shiv Singh</span>
   <span class="footer-note">IIT Delhi · Co-founder, GrapeRoot · 2026</span>
