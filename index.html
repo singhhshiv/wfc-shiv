@@ -39,17 +39,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 24px 52px;
-      background: rgba(255,255,255,0.9);
+      padding: 22px 52px;
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid transparent;
       transition: border-color 0.3s, padding 0.3s;
     }
 
-    nav.scrolled {
-      border-color: var(--border);
-      padding: 16px 52px;
-    }
+    nav.scrolled { border-color: var(--border); padding: 14px 52px; }
 
     .nav-name {
       font-family: var(--serif);
@@ -58,7 +55,6 @@
       font-weight: 400;
       color: var(--text);
       text-decoration: none;
-      letter-spacing: -0.01em;
     }
 
     .nav-links {
@@ -69,7 +65,7 @@
     }
 
     .nav-links a {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 400;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -82,15 +78,10 @@
 
     /* ─── HERO ─── */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 52px 80px;
+      padding: 140px 52px 100px;
       border-bottom: 1px solid var(--border);
-    }
-
-    .hero-inner {
-      max-width: 900px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .hero-tag {
@@ -99,7 +90,7 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -108,36 +99,35 @@
     .hero-tag::before {
       content: '';
       display: inline-block;
-      width: 28px;
-      height: 1px;
+      width: 24px; height: 1px;
       background: var(--muted);
     }
 
     .hero-name {
       font-family: var(--serif);
-      font-size: clamp(64px, 10vw, 110px);
+      font-size: clamp(64px, 10vw, 108px);
       font-weight: 300;
       font-style: italic;
       line-height: 0.92;
       letter-spacing: -0.02em;
       color: var(--text);
-      margin-bottom: 36px;
+      margin-bottom: 32px;
     }
 
     .hero-bio {
-      font-size: clamp(16px, 2vw, 20px);
+      font-size: clamp(15px, 1.6vw, 18px);
       font-weight: 300;
       color: var(--muted);
-      line-height: 1.7;
-      max-width: 580px;
-      margin-bottom: 52px;
+      line-height: 1.75;
+      max-width: 560px;
+      margin-bottom: 44px;
     }
 
     .hero-bio strong { color: var(--text); font-weight: 500; }
 
     .hero-links {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
@@ -147,29 +137,22 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       text-decoration: none;
-      padding: 11px 24px;
+      padding: 10px 22px;
       border: 1px solid var(--border);
       border-radius: 2px;
       color: var(--muted);
       transition: all 0.2s;
     }
 
-    .link-pill:hover {
-      border-color: var(--text);
-      color: var(--text);
-    }
+    .link-pill:hover { border-color: var(--text); color: var(--text); }
 
     .link-pill-fill {
       background: var(--text);
-      color: #fff;
+      color: #fff !important;
       border-color: var(--text);
     }
 
-    .link-pill-fill:hover {
-      background: #333;
-      border-color: #333;
-      color: #fff;
-    }
+    .link-pill-fill:hover { background: #333; border-color: #333; }
 
     /* ─── STATS ─── */
     .stats {
@@ -180,7 +163,7 @@
     }
 
     .stat-item {
-      padding: 52px;
+      padding: 48px 52px;
       border-right: 1px solid var(--border);
     }
 
@@ -188,7 +171,7 @@
 
     .stat-num {
       font-family: var(--serif);
-      font-size: clamp(44px, 6vw, 72px);
+      font-size: clamp(42px, 5vw, 68px);
       font-weight: 300;
       font-style: italic;
       line-height: 1;
@@ -198,15 +181,15 @@
 
     .stat-label {
       font-size: 12px;
-      font-weight: 400;
+      font-weight: 300;
       color: var(--muted);
-      letter-spacing: 0.04em;
       line-height: 1.5;
     }
 
-    /* ─── SECTION SHARED ─── */
-    .section { padding: 100px 52px; border-bottom: 1px solid var(--border); }
+    /* ─── SHARED SECTION ─── */
+    .section { padding: 96px 52px; border-bottom: 1px solid var(--border); }
     .section-alt { background: var(--bg-soft); }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
 
     .section-eyebrow {
       font-size: 11px;
@@ -214,7 +197,7 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 52px;
+      margin-bottom: 48px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -223,22 +206,19 @@
     .section-eyebrow::before {
       content: '';
       display: inline-block;
-      width: 28px;
-      height: 1px;
+      width: 24px; height: 1px;
       background: var(--muted);
     }
 
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-
     h2 {
       font-family: var(--serif);
-      font-size: clamp(36px, 5vw, 58px);
+      font-size: clamp(34px, 4.5vw, 54px);
       font-weight: 300;
       font-style: italic;
-      line-height: 1.1;
+      line-height: 1.12;
       letter-spacing: -0.01em;
       color: var(--text);
-      margin-bottom: 52px;
+      margin-bottom: 48px;
     }
 
     /* ─── JOURNEY ─── */
@@ -251,11 +231,9 @@
     }
 
     .journey-item {
-      background: var(--bg);
-      padding: 40px;
+      background: var(--bg-soft);
+      padding: 38px;
     }
-
-    .section-alt .journey-item { background: var(--bg-soft); }
 
     .journey-period {
       font-size: 11px;
@@ -263,30 +241,29 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .journey-title {
       font-family: var(--serif);
-      font-size: 26px;
+      font-size: 24px;
       font-style: italic;
       font-weight: 400;
       color: var(--text);
-      line-height: 1.2;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .journey-sub {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .journey-desc {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 300;
       color: var(--muted);
       line-height: 1.75;
@@ -296,24 +273,24 @@
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 20px;
     }
 
     .project-card {
       border: 1px solid var(--border);
-      border-radius: 3px;
-      padding: 40px;
+      border-radius: 2px;
+      padding: 38px;
       text-decoration: none;
       color: inherit;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .project-card:hover {
-      border-color: rgba(14,14,14,0.3);
-      box-shadow: 0 8px 32px rgba(14,14,14,0.06);
+      border-color: rgba(14,14,14,0.28);
+      box-shadow: 0 8px 28px rgba(14,14,14,0.06);
     }
 
     .project-tag {
@@ -326,7 +303,7 @@
 
     .project-name {
       font-family: var(--serif);
-      font-size: 32px;
+      font-size: 30px;
       font-style: italic;
       font-weight: 400;
       color: var(--text);
@@ -334,7 +311,7 @@
     }
 
     .project-desc {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 300;
       color: var(--muted);
       line-height: 1.75;
@@ -344,9 +321,176 @@
     .project-arrow {
       font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--text);
+    }
+
+    /* ─── CAFES ─── */
+    .cafes-intro {
+      max-width: 620px;
+      margin-bottom: 64px;
+    }
+
+    .cafes-intro h2 { margin-bottom: 20px; }
+
+    .cafes-body {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .cafes-body + .cafes-body { margin-top: 14px; }
+
+    /* masonry-style photo grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 12px;
+      margin-bottom: 72px;
+    }
+
+    .photo-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+      background: var(--bg-soft);
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .photo-item:hover img { transform: scale(1.03); }
+
+    .photo-item-tall { grid-row: span 2; }
+
+    .photo-item:nth-child(1) { aspect-ratio: 4/3; }
+    .photo-item:nth-child(2) { aspect-ratio: 4/3; }
+    .photo-item:nth-child(3) { aspect-ratio: 4/5; grid-row: span 2; }
+    .photo-item:nth-child(4) { aspect-ratio: 4/3; }
+    .photo-item:nth-child(5) { aspect-ratio: 4/3; }
+    .photo-item:nth-child(6) { aspect-ratio: 4/3; }
+    .photo-item:nth-child(7) { aspect-ratio: 4/3; }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 28px 16px 14px;
+      background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+    }
+
+    /* cafe list */
+    .cafes-list-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 64px;
+    }
+
+    .cafe-city-block {
+      background: var(--bg);
+      padding: 32px 36px;
+    }
+
+    .section-alt .cafe-city-block { background: var(--bg-soft); }
+
+    .cafe-city {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cafe-names {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .cafe-names li {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .cafe-names li span {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 300;
+      color: var(--muted);
+      display: block;
+      margin-top: 1px;
+    }
+
+    /* community CTA */
+    .community-cta {
+      background: var(--text);
+      border-radius: 2px;
+      padding: 48px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .community-cta-text h3 {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3vw, 38px);
+      font-style: italic;
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .community-cta-text p {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .btn-cta-white {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 13px 32px;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.85);
+      border-radius: 2px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+
+    .btn-cta-white:hover {
+      border-color: #fff;
+      color: #fff;
     }
 
     /* ─── CONTACT ─── */
@@ -359,26 +503,20 @@
       align-items: start;
     }
 
-    .contact-left h2 { margin-bottom: 20px; }
-
     .contact-body {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 300;
       color: var(--muted);
       line-height: 1.8;
       margin-bottom: 36px;
     }
 
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+    .contact-links { display: flex; flex-direction: column; gap: 14px; }
 
     .contact-link {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-decoration: none;
       color: var(--muted);
       font-size: 13px;
@@ -394,11 +532,11 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
-      width: 72px;
+      width: 68px;
       flex-shrink: 0;
     }
 
-    .f-group { margin-bottom: 18px; }
+    .f-group { margin-bottom: 16px; }
 
     .f-group label {
       display: block;
@@ -407,7 +545,7 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
     .f-group input,
@@ -416,7 +554,7 @@
       background: var(--bg-soft);
       border: 1px solid var(--border);
       border-radius: 2px;
-      padding: 12px 14px;
+      padding: 11px 14px;
       font-family: var(--sans);
       font-size: 14px;
       font-weight: 300;
@@ -429,14 +567,14 @@
     .f-group input:focus,
     .f-group textarea:focus { border-color: var(--text); }
 
-    .f-group textarea { min-height: 110px; resize: vertical; line-height: 1.6; }
+    .f-group textarea { min-height: 100px; resize: vertical; line-height: 1.6; }
 
     .btn-send {
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 13px 36px;
+      padding: 12px 32px;
       background: var(--text);
       color: #fff;
       border: none;
@@ -449,7 +587,7 @@
 
     /* ─── FOOTER ─── */
     footer {
-      padding: 36px 52px;
+      padding: 32px 52px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -463,10 +601,7 @@
       color: var(--text);
     }
 
-    .footer-note {
-      font-size: 11px;
-      color: var(--muted);
-    }
+    .footer-note { font-size: 11px; color: var(--muted); }
 
     /* ─── MOBILE ─── */
     @media (max-width: 768px) {
@@ -475,15 +610,27 @@
       .nav-links { display: none; }
 
       .hero { padding: 100px 20px 64px; }
+
       .stats { grid-template-columns: 1fr; }
-      .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding: 36px 20px; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 20px; }
       .stat-item:last-child { border-bottom: none; }
 
-      .section { padding: 72px 20px; }
-      .journey-grid { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .contact-inner { grid-template-columns: 1fr; gap: 52px; }
-      footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; gap: 8px; }
+      .section { padding: 64px 20px; }
+
+      .journey-grid,
+      .projects-grid,
+      .cafes-list-grid { grid-template-columns: 1fr; }
+
+      .photo-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .photo-item:nth-child(3) { grid-row: span 1; aspect-ratio: 4/3; }
+
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+
+      .community-cta { flex-direction: column; align-items: flex-start; padding: 32px 24px; }
+
+      footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
     }
   </style>
 </head>
@@ -494,20 +641,21 @@
   <a href="#" class="nav-name">Shiv Singh</a>
   <ul class="nav-links">
     <li><a href="#journey">Journey</a></li>
-    <li><a href="#projects">Work</a></li>
+    <li><a href="#cafes">Café Life</a></li>
     <li><a href="#contact">Say Hello</a></li>
     <li><a href="https://www.linkedin.com/in/singhhshiv/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
+<div style="border-bottom: 1px solid var(--border);">
+  <div class="hero">
     <div class="hero-tag">Co-founder · IIT Delhi</div>
     <div class="hero-name">Shiv<br>Singh</div>
     <p class="hero-bio">
-      I build things, grow them, and make them reach people.<br>
-      Currently co-founder at <strong>GrapeRoot</strong> — leading distribution, growth, GTM, partnerships, and product. Before that: <strong>500 videos</strong>, <strong>35M views</strong>, and a lot of early-stage startups.
+      I build things, grow them, and make them reach people.
+      Currently co-founding <strong>GrapeRoot</strong> with a batchmate — leading distribution, growth, GTM, partnerships, and product.
+      Before that: <strong>500 videos</strong>, <strong>35M views</strong>, early-stage startups, and a lot of chai.
     </p>
     <div class="hero-links">
       <a href="#contact" class="link-pill link-pill-fill">Say Hello</a>
@@ -516,7 +664,7 @@
       <a href="https://sites.google.com/view/shivsinghco" target="_blank" rel="noopener" class="link-pill">Portfolio ↗</a>
     </div>
   </div>
-</section>
+</div>
 
 <!-- STATS -->
 <div class="stats">
@@ -540,35 +688,30 @@
     <div class="section-eyebrow">Journey</div>
     <h2>How I got here</h2>
     <div class="journey-grid">
-
       <div class="journey-item">
         <div class="journey-period">Now</div>
         <div class="journey-title">GrapeRoot</div>
         <div class="journey-sub">Co-founder</div>
         <p class="journey-desc">Building GrapeRoot with a batchmate from IIT Delhi. Leading distribution, growth, GTM, partnerships, and product. Day zero to whatever comes next.</p>
       </div>
-
       <div class="journey-item">
         <div class="journey-period">During College</div>
         <div class="journey-title">YouTube Creator</div>
         <div class="journey-sub">500 Videos · 35k Subs · 35M Views</div>
-        <p class="journey-desc">Built a YouTube channel from scratch while at IIT Delhi. 500 videos published, 35 million views earned. Learned distribution, content, and audience building the hard way — by doing it.</p>
+        <p class="journey-desc">Built a channel from scratch while at IIT Delhi. 500 videos, 35 million views. Learned distribution and audience-building the hard way — by doing it.</p>
       </div>
-
       <div class="journey-item">
         <div class="journey-period">Early Career</div>
         <div class="journey-title">Early-Stage Startups</div>
         <div class="journey-sub">Growth · GTM · Distribution</div>
-        <p class="journey-desc">Worked with early-stage startups across growth, go-to-market, and distribution. Got comfortable with zero-to-one — figuring out who the customer is, how to reach them, and how to keep them.</p>
+        <p class="journey-desc">Worked with early-stage startups on growth and go-to-market. Got comfortable with zero-to-one — figuring out who the customer is, how to reach them, and how to keep them.</p>
       </div>
-
       <div class="journey-item">
         <div class="journey-period">College</div>
         <div class="journey-title">Internships</div>
         <div class="journey-sub">Marketing · GTM · Growth · Content</div>
-        <p class="journey-desc">Multiple internships across marketing, GTM, growth, and content during college. Built the foundation of knowing how products reach people and how to make that repeatable.</p>
+        <p class="journey-desc">Multiple internships across marketing, GTM, growth, and content. Built the foundation of knowing how products reach people — and how to make that repeatable.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -579,32 +722,122 @@
     <div class="section-eyebrow">Work</div>
     <h2>What I'm building</h2>
     <div class="projects-grid">
-
       <a class="project-card" href="https://sites.google.com/view/shivsinghco" target="_blank" rel="noopener">
         <div class="project-tag">Current · Co-founder</div>
         <div class="project-name">GrapeRoot</div>
-        <p class="project-desc">Building GrapeRoot — a design system and product studio. Leading everything on the go-to-market side: distribution, partnerships, growth, and product direction.</p>
+        <p class="project-desc">Building GrapeRoot with a batchmate from IIT Delhi. A design system and product studio. Leading everything on the go-to-market side.</p>
         <div class="project-arrow">View more ↗</div>
       </a>
-
       <a class="project-card" href="https://www.youtube.com/@Shiv-IITD" target="_blank" rel="noopener">
         <div class="project-tag">Creator · 35M Views</div>
         <div class="project-name">YouTube</div>
-        <p class="project-desc">500+ videos. 35 million views. 35,000 subscribers. Built entirely while studying at IIT Delhi. A master class in consistency, distribution, and making things people actually watch.</p>
+        <p class="project-desc">500+ videos. 35 million views. 35,000 subscribers. Built entirely while studying at IIT Delhi. A lesson in consistency, distribution, and making things people actually watch.</p>
         <div class="project-arrow">Visit channel ↗</div>
       </a>
+    </div>
+  </div>
+</section>
 
+<!-- CAFÉ LIFE -->
+<section class="section section-alt" id="cafes">
+  <div class="section-inner">
+    <div class="section-eyebrow">Café Life</div>
+    <div class="cafes-intro">
+      <h2>Two years of working<br>from the best cafés in India</h2>
+      <p class="cafes-body">For the past two years, a café has been my office. Not because I had to — but because the right café does something to the way you think. The ambient noise, the smell of coffee, the unhurried pace of a table by the window. Some of my best work has happened in places like these.</p>
+      <p class="cafes-body" style="margin-top:14px;">I'd love to connect with people who work from cafés too — baristas, owners, regulars, founders, creators. Especially in NCR, Udaipur, and Jaipur. If you work at or run a café I'd love in this list, say hello.</p>
+    </div>
+
+    <!-- PHOTO GRID -->
+    <div class="photo-grid">
+      <div class="photo-item">
+        <img src="IMG_4535.jpg" alt="Spaced Out, Delhi" />
+        <div class="photo-caption">Spaced Out · Delhi</div>
+      </div>
+      <div class="photo-item">
+        <img src="IMG_0388.jpg" alt="Sardar Ji Baksh, Delhi" />
+        <div class="photo-caption">Sardar Ji Baksh · Delhi</div>
+      </div>
+      <div class="photo-item" style="aspect-ratio:4/5;grid-row:span 2;">
+        <img src="IMG_3906.jpg" alt="Bottega, Udaipur" style="object-position:center;" />
+        <div class="photo-caption">Bottega · Udaipur</div>
+      </div>
+      <div class="photo-item">
+        <img src="IMG_2190.jpg" alt="Perch, Khan Market" />
+        <div class="photo-caption">Perch · Khan Market, Delhi</div>
+      </div>
+      <div class="photo-item">
+        <img src="9f887e24-0a87-4741-9b2a-2f6c59172a7e.JPG" alt="Chaayos, SDA" />
+        <div class="photo-caption">Chaayos · SDA, Delhi</div>
+      </div>
+      <div class="photo-item">
+        <img src="IMG_6354.jpg" alt="The Hosteller, Mussoorie" />
+        <div class="photo-caption">The Hosteller · Mussoorie</div>
+      </div>
+      <div class="photo-item">
+        <img src="IMG_9794.jpg" alt="Artjuna, Goa" />
+        <div class="photo-caption">Artjuna · Goa</div>
+      </div>
+    </div>
+
+    <!-- CAFÉ LIST -->
+    <div class="cafes-list-grid">
+      <div class="cafe-city-block">
+        <div class="cafe-city">Delhi / NCR</div>
+        <ul class="cafe-names">
+          <li>Chaayos <span>SDA, South Delhi</span></li>
+          <li>Spaced Out <span>Delhi</span></li>
+          <li>Blue Tokai <span>Khan Market</span></li>
+          <li>Perch <span>Khan Market</span></li>
+          <li>Third Wave Coffee <span>Delhi / Gurugram</span></li>
+          <li>Caskara Coffee <span>West Delhi</span></li>
+          <li>Coffee Dates <span>West Delhi</span></li>
+          <li>Diggin Cafe <span>Delhi</span></li>
+          <li>Sardar Ji Baksh <span>Delhi</span></li>
+          <li>The BCC <span>Sec 62, Noida</span></li>
+        </ul>
+      </div>
+      <div class="cafe-city-block">
+        <div class="cafe-city">Rajasthan</div>
+        <ul class="cafe-names">
+          <li>Taprì Niwas <span>Udaipur</span></li>
+          <li>Crazy Coffee <span>Udaipur</span></li>
+          <li>Bottega <span>Udaipur</span></li>
+          <li>Jajam <span>Udaipur</span></li>
+          <li>NBC <span>Jaipur</span></li>
+          <li>Half Light <span>Jaipur</span></li>
+        </ul>
+      </div>
+      <div class="cafe-city-block">
+        <div class="cafe-city">Rest of India</div>
+        <ul class="cafe-names">
+          <li>Artjuna <span>Goa</span></li>
+          <li>Third Wave Coffee <span>Andheri, Mumbai</span></li>
+          <li>Subko <span>Mumbai</span></li>
+          <li>The Hosteller <span>Mussoorie</span></li>
+          <li>Blue Tokai <span>Bengaluru</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="community-cta">
+      <div class="community-cta-text">
+        <h3>Work from cafés too?<br>Let's connect.</h3>
+        <p>Especially if you're in NCR, Udaipur or Jaipur — or if you run a café I should know about.</p>
+      </div>
+      <a href="#contact" class="btn-cta-white">Say Hello ↓</a>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="section section-alt" id="contact">
+<section class="section" id="contact">
   <div class="contact-inner">
-    <div class="contact-left">
+    <div>
       <div class="section-eyebrow">Contact</div>
       <h2>Let's talk</h2>
-      <p class="contact-body">If you're building something interesting, thinking about growth or GTM, or just want to connect — write to me. I read everything.</p>
+      <p class="contact-body">If you're building something interesting, thinking about growth or GTM, work from cafés, or just want to connect — write to me. I read everything.</p>
       <div class="contact-links">
         <a href="https://www.linkedin.com/in/singhhshiv/" target="_blank" rel="noopener" class="contact-link">
           <span class="contact-link-label">LinkedIn</span>
@@ -620,7 +853,7 @@
         </a>
       </div>
     </div>
-    <div class="contact-right">
+    <div>
       <form action="https://formspree.io/f/xvkpbgva" method="POST">
         <div class="f-group">
           <label>Your Name</label>
