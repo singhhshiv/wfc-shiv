@@ -3,29 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Entrepreneurs Only</title>
+  <title>Shiv Singh</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black: #0d1b2a;
-      --white: #f9f8f5;
-      --gray: #6a7280;
-      --light-gray: #e4e2db;
-      --amber: #c07d3a;
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans: 'DM Sans', -apple-system, sans-serif;
+      --bg:      #FFFFFF;
+      --bg-soft: #F8F7F5;
+      --text:    #0E0E0E;
+      --muted:   rgba(14,14,14,0.45);
+      --border:  rgba(14,14,14,0.09);
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --sans:    'DM Sans', -apple-system, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--white);
-      color: var(--black);
+      background: var(--bg);
+      color: var(--text);
       font-family: var(--sans);
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
@@ -33,28 +34,32 @@
     /* ─── NAV ─── */
     nav {
       position: fixed;
-      top: 0;
-      width: 100%;
+      top: 0; left: 0; right: 0;
       z-index: 100;
-      background: var(--white);
-      border-bottom: 1px solid var(--light-gray);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 40px;
-      height: 60px;
+      padding: 24px 52px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, padding 0.3s;
     }
 
-    .nav-logo {
+    nav.scrolled {
+      border-color: var(--border);
+      padding: 16px 52px;
+    }
+
+    .nav-name {
       font-family: var(--serif);
-      font-size: 20px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      color: var(--black);
+      font-size: 18px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text);
       text-decoration: none;
+      letter-spacing: -0.01em;
     }
-
-    .nav-logo span { color: var(--amber); }
 
     .nav-links {
       display: flex;
@@ -64,637 +69,589 @@
     }
 
     .nav-links a {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 400;
-      color: var(--gray);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
       text-decoration: none;
-      letter-spacing: 0.01em;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--black); }
-
-    .nav-apply {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--white) !important;
-      background: var(--black);
-      padding: 8px 18px;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .nav-apply:hover { opacity: 0.75; color: var(--white) !important; }
+    .nav-links a:hover { color: var(--text); }
 
     /* ─── HERO ─── */
     .hero {
-      padding-top: 60px;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-left: 40px;
-      padding-right: 40px;
-      border-bottom: 1px solid var(--light-gray);
+      align-items: center;
+      padding: 120px 52px 80px;
+      border-bottom: 1px solid var(--border);
     }
 
-    .hero-eyebrow {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 32px;
-    }
-
-    .hero-headline {
-      font-family: var(--serif);
-      font-size: clamp(52px, 8vw, 108px);
-      font-weight: 400;
-      line-height: 1.0;
-      letter-spacing: -0.01em;
+    .hero-inner {
       max-width: 900px;
-      margin-bottom: 40px;
     }
 
-    .hero-headline em { font-style: italic; color: var(--amber); }
-
-    .hero-sub {
-      font-size: 16px;
-      color: var(--gray);
-      max-width: 460px;
-      line-height: 1.7;
-      margin-bottom: 48px;
-    }
-
-    .hero-ctas { display: flex; gap: 16px; align-items: center; }
-
-    .btn-primary {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--white);
-      background: var(--black);
-      padding: 12px 28px;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .btn-primary:hover { opacity: 0.75; }
-
-    .btn-secondary {
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--black);
-      text-decoration: none;
-      border-bottom: 1px solid var(--amber);
-      padding-bottom: 1px;
-      transition: opacity 0.2s;
-    }
-
-    .btn-secondary:hover { opacity: 0.5; }
-
-    .hero-stat-row {
-      margin-top: 80px;
-      display: flex;
-      gap: 60px;
-      padding-top: 40px;
-      border-top: 1px solid var(--light-gray);
-    }
-
-    .hero-stat-item h3 {
-      font-family: var(--serif);
-      font-size: 38px;
-      font-weight: 400;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-stat-item p { font-size: 13px; color: var(--gray); margin-top: 4px; }
-
-    /* ─── SECTION LABEL ─── */
-    .section-label {
+    .hero-tag {
       font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
+      font-weight: 500;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 24px;
-    }
-
-    /* ─── STORIES ─── */
-    .stories { padding: 100px 40px; border-bottom: 1px solid var(--light-gray); }
-
-    .stories-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1px;
-      background: var(--light-gray);
-      margin-top: 48px;
-    }
-
-    .story-card {
-      background: var(--white);
-      padding: 48px 40px;
+      color: var(--muted);
+      margin-bottom: 28px;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      transition: background 0.2s;
+      align-items: center;
+      gap: 10px;
     }
 
-    .story-card:hover { background: #f2f0ec; }
-
-    .story-tag {
+    .hero-tag::before {
+      content: '';
       display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--amber);
-      border: 1px solid #e0c89a;
-      padding: 4px 10px;
-      border-radius: 100px;
-      width: fit-content;
+      width: 28px;
+      height: 1px;
+      background: var(--muted);
     }
 
-    .story-headline {
+    .hero-name {
       font-family: var(--serif);
-      font-size: 26px;
-      font-weight: 400;
-      line-height: 1.25;
-      letter-spacing: -0.01em;
-    }
-
-    .story-body { font-size: 14px; color: var(--gray); line-height: 1.7; flex: 1; }
-
-    .story-link {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--black);
-      text-decoration: none;
-      border-bottom: 1px solid var(--amber);
-      padding-bottom: 1px;
-      width: fit-content;
-      transition: opacity 0.2s;
-    }
-
-    .story-link:hover { opacity: 0.5; }
-
-    /* ─── HOW ─── */
-    .how { padding: 100px 40px; border-bottom: 1px solid var(--light-gray); }
-
-    .how-intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      margin-bottom: 80px;
-      align-items: start;
-    }
-
-    .how-headline {
-      font-family: var(--serif);
-      font-size: clamp(36px, 4vw, 60px);
-      font-weight: 400;
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-    }
-
-    .how-desc { font-size: 15px; color: var(--gray); line-height: 1.75; padding-top: 8px; }
-
-    .paths { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light-gray); }
-
-    .path-card { background: var(--white); padding: 56px 48px; }
-
-    .path-number {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 32px;
-    }
-
-    .path-title {
-      font-family: var(--serif);
-      font-size: 42px;
-      font-weight: 400;
-      letter-spacing: -0.01em;
-      margin-bottom: 16px;
-    }
-
-    .path-meta { font-size: 13px; color: var(--gray); margin-bottom: 28px; }
-
-    .path-desc { font-size: 15px; line-height: 1.75; margin-bottom: 40px; max-width: 420px; }
-
-    .path-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 48px; }
-
-    .path-features li {
-      font-size: 14px;
-      color: var(--gray);
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .path-features li::before { content: '—'; position: absolute; left: 0; color: var(--amber); }
-
-    /* ─── PULLOUT ─── */
-    .pullout { padding: 120px 40px; border-bottom: 1px solid var(--light-gray); text-align: center; }
-
-    .pullout-quote {
-      font-family: var(--serif);
-      font-size: clamp(28px, 4vw, 52px);
-      font-weight: 400;
+      font-size: clamp(64px, 10vw, 110px);
+      font-weight: 300;
       font-style: italic;
-      line-height: 1.25;
-      max-width: 820px;
-      margin: 0 auto 32px;
-      letter-spacing: -0.01em;
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 36px;
     }
 
-    .pullout-attr { font-size: 13px; color: var(--gray); }
+    .hero-bio {
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 580px;
+      margin-bottom: 52px;
+    }
 
-    /* ─── PORTFOLIO ─── */
-    .portfolio { padding: 100px 40px; border-bottom: 1px solid var(--light-gray); }
+    .hero-bio strong { color: var(--text); font-weight: 500; }
 
-    .portfolio-header {
+    .hero-links {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 56px;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
-    .portfolio-headline {
-      font-family: var(--serif);
-      font-size: clamp(32px, 3.5vw, 52px);
-      font-weight: 400;
-      letter-spacing: -0.01em;
-      max-width: 400px;
-      line-height: 1.15;
+    .link-pill {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 11px 24px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--muted);
+      transition: all 0.2s;
     }
 
-    .portfolio-grid {
+    .link-pill:hover {
+      border-color: var(--text);
+      color: var(--text);
+    }
+
+    .link-pill-fill {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
+    }
+
+    .link-pill-fill:hover {
+      background: #333;
+      border-color: #333;
+      color: #fff;
+    }
+
+    /* ─── STATS ─── */
+    .stats {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--light-gray);
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
-    .portfolio-item { background: var(--white); padding: 36px 32px; transition: background 0.2s; }
-    .portfolio-item:hover { background: #f2f0ec; }
+    .stat-item {
+      padding: 52px;
+      border-right: 1px solid var(--border);
+    }
 
-    .portfolio-name {
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
       font-family: var(--serif);
-      font-size: 20px;
-      font-weight: 400;
-      letter-spacing: -0.01em;
+      font-size: clamp(44px, 6vw, 72px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1;
+      color: var(--text);
       margin-bottom: 8px;
     }
 
-    .portfolio-desc { font-size: 13px; color: var(--gray); line-height: 1.6; }
+    .stat-label {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+    }
 
-    .portfolio-badge {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+    /* ─── SECTION SHARED ─── */
+    .section { padding: 100px 52px; border-bottom: 1px solid var(--border); }
+    .section-alt { background: var(--bg-soft); }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--amber);
-      border: 1px solid #e0c89a;
-      padding: 2px 8px;
-      border-radius: 100px;
+      color: var(--muted);
+      margin-bottom: 52px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--muted);
+    }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 52px;
+    }
+
+    /* ─── JOURNEY ─── */
+    .journey-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .journey-item {
+      background: var(--bg);
+      padding: 40px;
+    }
+
+    .section-alt .journey-item { background: var(--bg-soft); }
+
+    .journey-period {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
       margin-bottom: 14px;
     }
 
-    /* ─── APPLY CTA ─── */
-    .apply-cta {
-      padding: 120px 40px;
-      background: var(--black);
-      color: var(--white);
+    .journey-title {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .journey-sub {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .journey-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ─── PROJECTS ─── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 40px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: rgba(14,14,14,0.3);
+      box-shadow: 0 8px 32px rgba(14,14,14,0.06);
+    }
+
+    .project-tag {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .project-name {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.1;
+    }
+
+    .project-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
+      flex: 1;
+    }
+
+    .project-arrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    /* ─── CONTACT ─── */
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 88px;
+      align-items: start;
+    }
+
+    .contact-left h2 { margin-bottom: 20px; }
+
+    .contact-body {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-link {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 60px;
-    }
-
-    .apply-left h2 {
-      font-family: var(--serif);
-      font-size: clamp(36px, 5vw, 72px);
-      font-weight: 400;
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      margin-bottom: 20px;
-    }
-
-    .apply-left h2 em { color: var(--amber); }
-    .apply-left p { font-size: 15px; color: #8a95a3; max-width: 420px; line-height: 1.7; }
-
-    .apply-right { display: flex; flex-direction: column; gap: 16px; min-width: 220px; }
-
-    .btn-white {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--black);
-      background: var(--white);
-      padding: 14px 28px;
-      border-radius: 2px;
+      gap: 12px;
       text-decoration: none;
-      text-align: center;
-      transition: opacity 0.2s;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 300;
+      transition: color 0.2s;
     }
 
-    .btn-white:hover { opacity: 0.85; }
+    .contact-link:hover { color: var(--text); }
 
-    .btn-amber {
-      font-size: 14px;
+    .contact-link-label {
+      font-size: 10px;
       font-weight: 500;
-      color: var(--black);
-      background: var(--amber);
-      padding: 14px 28px;
-      border-radius: 2px;
-      text-decoration: none;
-      text-align: center;
-      transition: opacity 0.2s;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      width: 72px;
+      flex-shrink: 0;
     }
 
-    .btn-amber:hover { opacity: 0.85; }
+    .f-group { margin-bottom: 18px; }
+
+    .f-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .f-group input,
+    .f-group textarea {
+      width: 100%;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 12px 14px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+
+    .f-group input:focus,
+    .f-group textarea:focus { border-color: var(--text); }
+
+    .f-group textarea { min-height: 110px; resize: vertical; line-height: 1.6; }
+
+    .btn-send {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 13px 36px;
+      background: var(--text);
+      color: #fff;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-send:hover { background: #333; }
 
     /* ─── FOOTER ─── */
     footer {
-      padding: 60px 40px;
-      border-top: 1px solid var(--light-gray);
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 40px;
-    }
-
-    .footer-brand .nav-logo { display: block; margin-bottom: 12px; }
-    .footer-brand p { font-size: 13px; color: var(--gray); line-height: 1.6; max-width: 220px; }
-
-    .footer-col h4 {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gray);
-      margin-bottom: 16px;
-    }
-
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-
-    .footer-col ul a { font-size: 13px; color: var(--black); text-decoration: none; transition: color 0.2s; }
-    .footer-col ul a:hover { color: var(--gray); }
-
-    .footer-bottom {
-      padding: 20px 40px;
-      border-top: 1px solid var(--light-gray);
+      padding: 36px 52px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
     }
 
-    .footer-bottom p { font-size: 12px; color: var(--gray); }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 900px) {
-      nav { padding: 0 20px; }
-      .nav-links { gap: 20px; }
-      .hero, .stories, .how, .portfolio, .apply-cta, footer { padding-left: 20px; padding-right: 20px; }
-      .hero-stat-row { gap: 32px; flex-wrap: wrap; }
-      .stories-grid { grid-template-columns: 1fr; }
-      .how-intro { grid-template-columns: 1fr; gap: 32px; }
-      .paths { grid-template-columns: 1fr; }
-      .portfolio-grid { grid-template-columns: 1fr 1fr; }
-      .apply-cta { flex-direction: column; align-items: flex-start; }
-      footer { grid-template-columns: 1fr 1fr; }
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-style: italic;
+      color: var(--text);
     }
 
-    @media (max-width: 600px) {
+    .footer-note {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      nav.scrolled { padding: 12px 20px; }
       .nav-links { display: none; }
-      .portfolio-grid { grid-template-columns: 1fr; }
-      footer { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+
+      .hero { padding: 100px 20px 64px; }
+      .stats { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding: 36px 20px; }
+      .stat-item:last-child { border-bottom: none; }
+
+      .section { padding: 72px 20px; }
+      .journey-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 52px; }
+      footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; gap: 8px; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#" class="nav-logo">Entrepreneurs<span> Only</span></a>
-    <ul class="nav-links">
-      <li><a href="#membership">Membership</a></li>
-      <li><a href="#fellowship">Fellowship</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#apply" class="nav-apply">Apply</a></li>
-    </ul>
-  </nav>
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-name">Shiv Singh</a>
+  <ul class="nav-links">
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#contact">Say Hello</a></li>
+    <li><a href="https://www.linkedin.com/in/singhhshiv/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+  </ul>
+</nav>
 
-  <section class="hero">
-    <p class="hero-eyebrow">A community for serious builders · Est. 2024</p>
-    <h1 class="hero-headline">
-      Build something<br><em>that actually matters.</em>
-    </h1>
-    <p class="hero-sub">
-      Entrepreneurs Only is a curated community for founders, operators, and builders who are ready to go from <strong>zero to one</strong> — and need the right people around them to do it.
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Co-founder · IIT Delhi</div>
+    <div class="hero-name">Shiv<br>Singh</div>
+    <p class="hero-bio">
+      I build things, grow them, and make them reach people.<br>
+      Currently co-founder at <strong>GrapeRoot</strong> — leading distribution, growth, GTM, partnerships, and product. Before that: <strong>500 videos</strong>, <strong>35M views</strong>, and a lot of early-stage startups.
     </p>
-    <div class="hero-ctas">
-      <a href="#apply" class="btn-primary">Apply now</a>
-      <a href="#how" class="btn-secondary">See how it works</a>
+    <div class="hero-links">
+      <a href="#contact" class="link-pill link-pill-fill">Say Hello</a>
+      <a href="https://www.linkedin.com/in/singhhshiv/" target="_blank" rel="noopener" class="link-pill">LinkedIn ↗</a>
+      <a href="https://www.youtube.com/@Shiv-IITD" target="_blank" rel="noopener" class="link-pill">YouTube ↗</a>
+      <a href="https://sites.google.com/view/shivsinghco" target="_blank" rel="noopener" class="link-pill">Portfolio ↗</a>
     </div>
-    <div class="hero-stat-row">
-      <div class="hero-stat-item"><h3>500+</h3><p>Members globally</p></div>
-      <div class="hero-stat-item"><h3>$2B+</h3><p>Value created by alumni</p></div>
-      <div class="hero-stat-item"><h3>80+</h3><p>Companies founded</p></div>
-      <div class="hero-stat-item"><h3>6 mo</h3><p>Standard membership</p></div>
-    </div>
-  </section>
-
-  <section class="stories" id="stories">
-    <p class="section-label">Member stories</p>
-    <div class="stories-grid">
-      <div class="story-card">
-        <span class="story-tag">AI · Founder</span>
-        <h2 class="story-headline">He left Google to build the AI tool he always wanted.</h2>
-        <p class="story-body">After 6 years at Google Brain, Rohan joined EO with no product and no co-founder. Within three months he had both — and a seed round closed before leaving the program.</p>
-        <a href="#" class="story-link">More about Rohan →</a>
-      </div>
-      <div class="story-card">
-        <span class="story-tag">Fintech · Founder</span>
-        <h2 class="story-headline">Two strangers built a fintech for the underserved.</h2>
-        <p class="story-body">Priya and James met on day one of EO membership. They bonded over the gap in financial tools for gig workers and built a neobank serving 200,000 users in year one.</p>
-        <a href="#" class="story-link">More about their journey →</a>
-      </div>
-      <div class="story-card">
-        <span class="story-tag">Climate · Founder</span>
-        <h2 class="story-headline">A civil engineer turned climate tech founder.</h2>
-        <p class="story-body">Nadia spent a decade designing buildings. At EO she met the engineers and investors who helped her turn a niche insight about construction waste into a $12M-funded startup.</p>
-        <a href="#" class="story-link">More about Nadia →</a>
-      </div>
-      <div class="story-card">
-        <span class="story-tag">SaaS · Founder</span>
-        <h2 class="story-headline">She pivoted three times — and found product-market fit.</h2>
-        <p class="story-body">Fatima came in with a B2C idea that wasn't working. The EO community helped her stress-test assumptions rapidly. Her third pivot hit $1M ARR in 8 months.</p>
-        <a href="#" class="story-link">More about Fatima →</a>
-      </div>
-      <div class="story-card">
-        <span class="story-tag">Hardware · Research</span>
-        <h2 class="story-headline">A researcher who turned his PhD into a product.</h2>
-        <p class="story-body">Marcus spent 5 years studying robotics at MIT. EO gave him the founder mindset and operator network to commercialize his research — now powering warehouse automation at 3 Fortune 500s.</p>
-        <a href="#" class="story-link">More about Marcus →</a>
-      </div>
-      <div class="story-card">
-        <span class="story-tag">Consumer · Founder</span>
-        <h2 class="story-headline">A repeat founder who came back to think bigger.</h2>
-        <p class="story-body">After a $40M exit, Arjun joined EO not for funding but for the right room. He found a co-founder, a new category, and launched a consumer app that hit 500K downloads before Series A.</p>
-        <a href="#" class="story-link">More about Arjun →</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="how" id="how">
-    <p class="section-label">How it works</p>
-    <div class="how-intro">
-      <h2 class="how-headline">Building something real takes more than hustle.</h2>
-      <p class="how-desc">The path from idea to company isn't linear. EO members range from pre-idea to pre-launch, but all share one thing: the conviction to build something that lasts. We support builders at two stages:</p>
-    </div>
-    <div class="paths">
-      <div class="path-card" id="membership">
-        <p class="path-number">01 — Membership</p>
-        <h3 class="path-title">Core Membership</h3>
-        <p class="path-meta">6 months · No cost or equity · Explore &amp; Build</p>
-        <p class="path-desc">A curated, high-trust community of founders, operators, and domain experts — testing ideas, finding co-founders, and building conviction on what to pursue and how.</p>
-        <ul class="path-features">
-          <li>Weekly deep dives, events, and workshops</li>
-          <li>Peer network of 500+ active members worldwide</li>
-          <li>Direct intros to EO portfolio and alumni companies</li>
-          <li>Mentorship from founders who've scaled before</li>
-          <li>No strings — no cost, no equity, no commitment</li>
-        </ul>
-        <a href="#apply" class="btn-primary">Apply for Membership</a>
-      </div>
-      <div class="path-card" id="fellowship" style="background: #f2f0ec;">
-        <p class="path-number">02 — Fellowship</p>
-        <h3 class="path-title">Founder Fellowship</h3>
-        <p class="path-meta">$500K funding · 6% equity · Conviction &amp; Launch</p>
-        <p class="path-desc">Capital and community for founders who are ready to build. We back you early — before product-market fit — so you can move with speed and conviction rather than desperation.</p>
-        <ul class="path-features">
-          <li>$300K upfront for 6% + $200K in your next round</li>
-          <li>Dedicated partner support multiple times per week</li>
-          <li>Demo Day access and bespoke investor introductions</li>
-          <li>Up to $500K in cloud and tooling credits</li>
-          <li>Flexible timelines — no artificial sprint deadlines</li>
-        </ul>
-        <a href="#apply" class="btn-primary">Apply for Fellowship</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="pullout">
-    <p class="pullout-quote">"The EO community gave me the two things money can't buy: honest feedback and the right co-founder."</p>
-    <p class="pullout-attr">— EO Member, Cohort 3</p>
-  </section>
-
-  <section class="portfolio" id="portfolio">
-    <div class="portfolio-header">
-      <h2 class="portfolio-headline">Companies built here.</h2>
-      <a href="#" class="btn-secondary">See full portfolio →</a>
-    </div>
-    <div class="portfolio-grid">
-      <div class="portfolio-item"><span class="portfolio-badge">AI</span><p class="portfolio-name">Axon Labs</p><p class="portfolio-desc">AI-native workflow automation for enterprise ops teams.</p></div>
-      <div class="portfolio-item"><span class="portfolio-badge">Fintech</span><p class="portfolio-name">Kora</p><p class="portfolio-desc">Banking and credit for gig workers and freelancers.</p></div>
-      <div class="portfolio-item"><span class="portfolio-badge">Climate</span><p class="portfolio-name">Groundwork</p><p class="portfolio-desc">Reducing construction waste through intelligent material routing.</p></div>
-      <div class="portfolio-item"><span class="portfolio-badge">SaaS</span><p class="portfolio-name">Loopflow</p><p class="portfolio-desc">B2B workflow automation — $1M ARR in 8 months.</p></div>
-      <div class="portfolio-item"><span class="portfolio-badge">Robotics</span><p class="portfolio-name">Archform</p><p class="portfolio-desc">Autonomous warehouse robotics for logistics providers.</p></div>
-      <div class="portfolio-item"><span class="portfolio-badge">Consumer</span><p class="portfolio-name">Reframe</p><p class="portfolio-desc">AI-powered personal finance for the next generation.</p></div>
-      <div class="portfolio-item"><span class="portfolio-badge">Health</span><p class="portfolio-name">Vela Health</p><p class="portfolio-desc">Preventive health plans built around real behavior data.</p></div>
-      <div class="portfolio-item"><span class="portfolio-badge">Dev Tools</span><p class="portfolio-name">Stackr</p><p class="portfolio-desc">Infrastructure observability for fast-moving engineering teams.</p></div>
-    </div>
-  </section>
-
-  <section class="apply-cta" id="apply">
-    <div class="apply-left">
-      <h2>Ready to build<br><em>what's next?</em></h2>
-      <p>Join the waitlist. We're opening spots on a rolling basis — no traction needed, just ambition.</p>
-    </div>
-    <div class="apply-right">
-      <form id="waitlist-form" action="https://formspree.io/f/xvkpbgva" method="POST" style="display:flex;flex-direction:column;gap:12px;width:100%;">
-        <input type="text" name="name" placeholder="Your name" required style="font-family:var(--sans);font-size:14px;padding:13px 16px;border:1px solid #2a3a4a;border-radius:2px;background:#16283a;color:var(--white);outline:none;" />
-        <input type="email" name="email" placeholder="Your email" required style="font-family:var(--sans);font-size:14px;padding:13px 16px;border:1px solid #2a3a4a;border-radius:2px;background:#16283a;color:var(--white);outline:none;" />
-        <select name="role" required style="font-family:var(--sans);font-size:14px;padding:13px 16px;border:1px solid #2a3a4a;border-radius:2px;background:#16283a;color:var(--white);outline:none;cursor:pointer;">
-          <option value="" disabled selected>I am a...</option>
-          <option value="founder">Founder / aspiring founder</option>
-          <option value="operator">Operator / executive</option>
-          <option value="engineer">Engineer / builder</option>
-          <option value="researcher">Researcher / academic</option>
-          <option value="investor">Investor</option>
-          <option value="other">Other</option>
-        </select>
-        <button type="submit" class="btn-amber" style="border:none;cursor:pointer;font-family:var(--sans);">Join the Waitlist →</button>
-      </form>
-      <div id="waitlist-success" style="display:none;text-align:center;padding:24px 0;">
-        <p style="font-family:var(--serif);font-size:24px;font-style:italic;color:var(--amber);margin-bottom:8px;">You're on the list.</p>
-        <p style="font-size:13px;color:#8a95a3;">We'll be in touch soon.</p>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          form.style.display = 'none';
-          document.getElementById('waitlist-success').style.display = 'block';
-        }
-      } catch(err) {}
-    });
-  </script>
-
-  <footer id="about">
-    <div class="footer-brand">
-      <a href="#" class="nav-logo">Entrepreneurs<span> Only</span></a>
-      <p>A curated community for serious builders. Global, but tight-knit.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Programs</h4>
-      <ul>
-        <li><a href="#">Core Membership</a></li>
-        <li><a href="#">Founder Fellowship</a></li>
-        <li><a href="#">EO Investing</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="#">About EO</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Events</a></li>
-      </ul>
-    </div>
-    <div class="footer-col" id="blog">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="#">Twitter / X</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">Newsletter</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-  </footer>
-
-  <div class="footer-bottom">
-    <p>© 2026 Entrepreneurs Only. All rights reserved.</p>
-    <p>Privacy Policy · Terms of Use</p>
   </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item">
+    <div class="stat-num">35M</div>
+    <div class="stat-label">YouTube views<br>across 500+ videos</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">35k</div>
+    <div class="stat-label">Subscribers<br>on YouTube</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">IIT D</div>
+    <div class="stat-label">Indian Institute<br>of Technology Delhi</div>
+  </div>
+</div>
+
+<!-- JOURNEY -->
+<section class="section section-alt" id="journey">
+  <div class="section-inner">
+    <div class="section-eyebrow">Journey</div>
+    <h2>How I got here</h2>
+    <div class="journey-grid">
+
+      <div class="journey-item">
+        <div class="journey-period">Now</div>
+        <div class="journey-title">GrapeRoot</div>
+        <div class="journey-sub">Co-founder</div>
+        <p class="journey-desc">Building GrapeRoot with a batchmate from IIT Delhi. Leading distribution, growth, GTM, partnerships, and product. Day zero to whatever comes next.</p>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-period">During College</div>
+        <div class="journey-title">YouTube Creator</div>
+        <div class="journey-sub">500 Videos · 35k Subs · 35M Views</div>
+        <p class="journey-desc">Built a YouTube channel from scratch while at IIT Delhi. 500 videos published, 35 million views earned. Learned distribution, content, and audience building the hard way — by doing it.</p>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-period">Early Career</div>
+        <div class="journey-title">Early-Stage Startups</div>
+        <div class="journey-sub">Growth · GTM · Distribution</div>
+        <p class="journey-desc">Worked with early-stage startups across growth, go-to-market, and distribution. Got comfortable with zero-to-one — figuring out who the customer is, how to reach them, and how to keep them.</p>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-period">College</div>
+        <div class="journey-title">Internships</div>
+        <div class="journey-sub">Marketing · GTM · Growth · Content</div>
+        <p class="journey-desc">Multiple internships across marketing, GTM, growth, and content during college. Built the foundation of knowing how products reach people and how to make that repeatable.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="section-inner">
+    <div class="section-eyebrow">Work</div>
+    <h2>What I'm building</h2>
+    <div class="projects-grid">
+
+      <a class="project-card" href="https://sites.google.com/view/shivsinghco" target="_blank" rel="noopener">
+        <div class="project-tag">Current · Co-founder</div>
+        <div class="project-name">GrapeRoot</div>
+        <p class="project-desc">Building GrapeRoot — a design system and product studio. Leading everything on the go-to-market side: distribution, partnerships, growth, and product direction.</p>
+        <div class="project-arrow">View more ↗</div>
+      </a>
+
+      <a class="project-card" href="https://www.youtube.com/@Shiv-IITD" target="_blank" rel="noopener">
+        <div class="project-tag">Creator · 35M Views</div>
+        <div class="project-name">YouTube</div>
+        <p class="project-desc">500+ videos. 35 million views. 35,000 subscribers. Built entirely while studying at IIT Delhi. A master class in consistency, distribution, and making things people actually watch.</p>
+        <div class="project-arrow">Visit channel ↗</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-alt" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="section-eyebrow">Contact</div>
+      <h2>Let's talk</h2>
+      <p class="contact-body">If you're building something interesting, thinking about growth or GTM, or just want to connect — write to me. I read everything.</p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/singhhshiv/" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-label">LinkedIn</span>
+          <span>singhhshiv ↗</span>
+        </a>
+        <a href="https://www.youtube.com/@Shiv-IITD" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-label">YouTube</span>
+          <span>@Shiv-IITD ↗</span>
+        </a>
+        <a href="https://sites.google.com/view/shivsinghco" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-label">Portfolio</span>
+          <span>shivsinghco ↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-right">
+      <form action="https://formspree.io/f/xvkpbgva" method="POST">
+        <div class="f-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="Rohan Mehta" required />
+        </div>
+        <div class="f-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="f-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="What's on your mind?"></textarea>
+        </div>
+        <button type="submit" class="btn-send">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Shiv Singh</span>
+  <span class="footer-note">IIT Delhi · Co-founder, GrapeRoot · 2026</span>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+</script>
 
 </body>
 </html>
