@@ -84,6 +84,26 @@
       margin: 0 auto;
       padding: 136px 52px 96px;
       border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 520px;
+      border-radius: 3px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
     }
 
     .hero-eyebrow {
@@ -593,7 +613,8 @@
       nav.scrolled { padding: 11px 20px; }
       .nav-links { display: none; }
 
-      .hero { padding: 96px 20px 64px; }
+      .hero { padding: 96px 20px 64px; grid-template-columns: 1fr; gap: 36px; }
+      .hero-photo { height: 280px; }
 
       .stats { grid-template-columns: 1fr; }
       .stat { border-right: none; border-bottom: 1px solid var(--border); padding: 30px 20px; }
@@ -637,18 +658,22 @@
 
 <div style="border-bottom:1px solid var(--border);">
   <div class="hero">
-    <div class="hero-eyebrow">Co-founder · IIT Delhi</div>
-    <div class="hero-name">Shiv<br>Singh</div>
-    <p class="hero-bio">
-      I build things, grow them, and make them reach people.
-      Co-founding <strong>GrapeRoot</strong> with a batchmate, leading distribution, growth, GTM, partnerships, and product.
-      Before that: <strong>500 videos</strong>, <strong>35M views</strong>, early-stage startups, and a lot of chai along the way.
-    </p>
-    <div class="hero-pills">
-      <a href="#contact" class="pill pill-dark">Say Hello</a>
-      <a href="https://www.linkedin.com/in/singhhshiv/" target="_blank" rel="noopener" class="pill">LinkedIn</a>
-      <a href="https://www.youtube.com/@Shiv-IITD" target="_blank" rel="noopener" class="pill">YouTube</a>
-      <a href="https://sites.google.com/view/shivsinghco" target="_blank" rel="noopener" class="pill">Portfolio</a>
+    <div class="hero-left">
+      <div class="hero-name">Shiv<br>Singh</div>
+      <p class="hero-bio">
+        I build things, grow them, and make them reach people.
+        Co-founding <strong>GrapeRoot</strong> with a batchmate, leading distribution, growth, GTM, partnerships, and product.
+        Before that: <strong>500 videos</strong>, <strong>35M views</strong>, early-stage startups, and a lot of coffee and chai along the way.
+      </p>
+      <div class="hero-pills">
+        <a href="#contact" class="pill pill-dark">Say Hello</a>
+        <a href="https://www.linkedin.com/in/singhhshiv/" target="_blank" rel="noopener" class="pill">LinkedIn</a>
+        <a href="https://www.youtube.com/@Shiv-IITD" target="_blank" rel="noopener" class="pill">YouTube</a>
+        <a href="https://sites.google.com/view/shivsinghco" target="_blank" rel="noopener" class="pill">Portfolio</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="artjunagoa.jpg" alt="" />
     </div>
   </div>
 </div>
